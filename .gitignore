@@ -22,3 +22,9 @@ finemap_run.log
 *.log
 # build intermediates
 paper/keloid_finemapping_paper.html
+# LaTeX build intermediates (paper/latex/paper.tex is kept as the source)
+paper/latex/*.pdf
+paper/latex/*.aux
+paper/latex/*.out
+paper/latex/*.xdv
+.tectonic_cache/

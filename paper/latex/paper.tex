@@ -1,0 +1,410 @@
+% Two-column preprint template, modelled on the look of Elsevier's CAS layout (own code, no Elsevier class).
+% Filled by scripts/make_latex.py; compile with Tectonic (XeTeX).
+\documentclass[10pt,twocolumn,a4paper]{article}
+\usepackage[a4paper,top=2.3cm,bottom=2.5cm,left=1.9cm,right=1.9cm,columnsep=0.75cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{texgyretermes}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\setsansfont{lmsans10}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-oblique,BoldItalicFont=*-boldoblique]
+\setmonofont{lmmono10-regular}[Extension=.otf,BoldFont=lmmono10-regular,ItalicFont=lmmono10-italic,BoldItalicFont=lmmono10-italic,Scale=0.92]
+\usepackage{newunicodechar}
+\newunicodechar{→}{$\rightarrow$}
+\newunicodechar{≥}{$\geq$}
+\newunicodechar{≤}{$\leq$}
+\newunicodechar{−}{$-$}
+\newunicodechar{×}{$\times$}
+\newunicodechar{±}{$\pm$}
+\newunicodechar{≈}{$\approx$}
+\newunicodechar{≠}{$\neq$}
+\newunicodechar{‑}{-}
+\newunicodechar{β}{$\beta$}
+\newunicodechar{α}{$\alpha$}
+\newunicodechar{⁻}{\textsuperscript{$-$}}
+\newunicodechar{⁸}{\textsuperscript{8}}
+\usepackage{amsmath}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs,array,tabularx,longtable}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{cite}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black,pdfusetitle]{hyperref}
+\usepackage{xurl}
+
+\definecolor{authorgrey}{gray}{0.45}
+\setlist{nosep,leftmargin=1.3em,itemsep=2pt,topsep=3pt}
+\providecommand{\tightlist}{}
+\sloppy\emergencystretch=2em
+\setlength{\parindent}{1.2em}\setlength{\parskip}{0pt}
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}\setlength{\floatsep}{10pt plus 2pt minus 2pt}
+\setcounter{topnumber}{3}\renewcommand{\topfraction}{0.9}\renewcommand{\textfraction}{0.08}\renewcommand{\floatpagefraction}{0.8}
+\setcounter{dbltopnumber}{3}\renewcommand{\dbltopfraction}{0.9}\renewcommand{\dblfloatpagefraction}{0.8}
+
+\titleformat{\section}{\sffamily\bfseries\fontsize{11}{13}\selectfont}{\thesection.}{0.55em}{}
+\titleformat{\subsection}{\sffamily\bfseries\fontsize{9.5}{11.5}\selectfont}{\thesubsection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{13pt plus 3pt minus 2pt}{5pt plus 1pt}
+\titlespacing*{\subsection}{0pt}{9pt plus 2pt minus 2pt}{3pt plus 1pt}
+
+\newcommand{\figcap}[2]{\par\vspace{5pt}{\sffamily\footnotesize\textbf{#1}\ #2\par}}
+\newcommand{\tabcap}[2]{{\sffamily\footnotesize\textbf{#1}\ #2\par}\vspace{4pt}}
+\renewcommand{\thetable}{\arabic{table}}
+
+\pagestyle{fancy}\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0.4pt}
+\fancyfoot[L]{\sffamily\footnotesize Abdel Nasser: Preprint, not peer reviewed}
+\fancyfoot[R]{\sffamily\footnotesize Page \thepage\ of \pageref*{LastPage}}
+\hypersetup{pdftitle={Variant-level prioritisation of keloid GWAS loci}, pdfauthor={Mirza Gamal Abdel Nasser}}
+
+\makeatletter
+\renewenvironment{thebibliography}[1]{\section*{References}\small\list{\@biblabel{\@arabic\c@enumiv}}{\settowidth\labelwidth{[99]}\leftmargin\labelwidth\advance\leftmargin\labelsep\setlength{\itemsep}{1.5pt}\setlength{\parsep}{0pt}\usecounter{enumiv}\renewcommand\theenumiv{\@arabic\c@enumiv}}\raggedright}{\endlist}
+\makeatother
+
+\begin{document}
+\twocolumn[{%
+\begin{@twocolumnfalse}
+{\sffamily\fontsize{17}{21}\selectfont Variant-level prioritisation of keloid GWAS loci with LD fine-mapping and AlphaGenome 2: predicted skin regulatory effects and testable hypotheses\par}
+\vspace{10pt}
+{\sffamily\fontsize{11}{13}\selectfont\color{authorgrey}Mirza Gamal Abdel Nasser}\textsuperscript{\color{authorgrey}*}\par
+\vspace{2pt}{\footnotesize\itshape *Corresponding author: mirzagamalabdelnasser@gmail.com\par}
+\vspace{7pt}\hrule height 0.4pt\vspace{7pt}
+\noindent\begin{minipage}[t]{0.235\textwidth}
+{\sffamily\footnotesize\addfontfeatures{LetterSpace=12}ARTICLE INFO}\par\vspace{1pt}\hrule height 0.4pt\vspace{6pt}
+{\footnotesize\itshape Keywords:}\par
+{\footnotesize keloid\\GWAS\\LD fine-mapping\\AlphaGenome\\regulatory variant prediction\par}
+\vspace{6pt}{\footnotesize\itshape Status:}\par
+{\scriptsize\raggedright Hypothesis-generating computational study. Nothing here is experimentally validated. All 39 lead loci analysed are already published genome-wide-significant keloid associations in the GWAS Catalog; this work does \textbf{not} report new loci.\par}
+\vspace{5pt}{\scriptsize\raggedright \emph{Analysis assisted by Claude (Anthropic).} Preprint, version 0.1.0, 17 November 2026. Research use only; not clinical advice.\par}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.735\textwidth}
+{\sffamily\footnotesize\addfontfeatures{LetterSpace=12}ABSTRACT}\par\vspace{1pt}\hrule height 0.4pt\vspace{6pt}
+\footnotesize\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}
+\textbf{Background.} Keloids are fibroproliferative skin scars with a genetic component supported by GWAS. Genome-wide association studies (GWAS) have reported dozens of loci, but most lead variants are non-coding and the causal variant and target gene are rarely known.
+
+\textbf{Methods.} We took 39 lead variants with genome-wide-significant keloid associations in the GWAS Catalog (trait MONDO\_0005348), expanded each to linkage-disequilibrium (LD) proxies (r² ≥ 0.8 in 1000 Genomes EUR or EAS) giving 349 candidate rows (278 unique single-nucleotide variants; 686 indels, multiallelic and unannotated proxies were excluded), and scored candidates with AlphaGenome 2 in six skin-relevant cell types (1,644 of 1,668 variant-cell-type pairs scored; 4 variants could not be scored). Seven predicted regulatory metrics were rank-averaged into one untuned score and the top variant was taken per locus (35 loci ranked). We described expression of mapped genes in a public keloid single-cell dataset (GSE163973; 40,655 cells) and checked each locus against the GWAS Catalog, GTEx skin eQTLs, ClinVar and the literature, assigning a variant-level novelty tier.
+
+\textbf{Results.} Of 39 leads, 15 were tier 1 (the variant itself is already a Catalog hit or named in published fine-mapping) and 24 were tier 2 (known locus; the top proxy variant and its predicted mechanism are not named in the sources we found); none was tier 3. Among the top 10 loci, 4 were tier 1 and 6 tier 2. Three tier-2 top variants are exact-variant GTEx skin eQTLs: rs2049878 (\emph{N6AMT1}/\emph{HEMK2}, p = 1.6e-10), rs940189 (\emph{FOXL2}, p = 2.15e-6) and rs7579101 (\emph{BABAM2}, p = 4.4e-5). Concordance of the AlphaGenome score with prior GWAS evidence on a 50-variant benchmark was weak (Spearman 0.12, 95\% CI −0.20 to 0.44), so the ranking is uncalibrated.
+
+\textbf{Conclusions.} The contribution is variant-level prioritisation and mechanistic hypotheses (skin eQTL, predicted skin chromatin effect) at known loci. We propose reporter, CRISPR-editing/CRISPRi and allelic-expression experiments, strongest hypotheses first, for wet-lab collaborators.
+\end{minipage}
+\vspace{6pt}\hrule height 0.4pt\vspace{14pt}
+\end{@twocolumnfalse}}]
+
+\section{Introduction}
+
+Keloids are raised scars that grow beyond the original wound. GWAS in Japanese, Chinese Han, European and multi-ancestry cohorts have reported a growing set of susceptibility loci \cite{k1,k2,k3,k14,k15,k16,k17}. The first Japanese GWAS reported four loci \cite{k2}, including a 3q22.3 signal near \emph{FOXL2} whose lead rs1511412 was replicated in Chinese Han populations \cite{k3,k4,k5}, and a recent multi-ancestry meta-analysis reported further loci and putatively causal variants by statistical fine-mapping \cite{k1}.
+
+Two problems limit what a bench scientist can do with these results. First, GWAS lead variants are tags. A lead is usually one of many variants in strong LD, and the causal variant (and the gene it acts on) is typically unknown. Second, most hits are non-coding, so their effect is presumably regulatory and cell-type specific. Functional follow-up exists for a few loci, for example a risk SNP that alters an enhancer--promoter interaction and a long non-coding RNA \cite{k6}, and \emph{JAG1}/Notch signalling has been studied in keloid fibroblasts independently of any one GWAS variant \cite{k8,k9,k10}, but for most loci no variant-level mechanism has been proposed.
+
+Sequence-to-function models can score non-coding variants. AlphaGenome \cite{k18} predicts chromatin accessibility, histone and transcription-factor binding, transcription initiation and gene expression across many cell types from DNA sequence, and can compare reference and alternative alleles. AlphaFold 3 \cite{k19} predicts biomolecular structures, which is relevant only to the few coding keloid variants.
+
+Here we ask a narrow question: among LD proxies of published keloid lead variants, which single variants does AlphaGenome predict to have the strongest regulatory effect in skin cell types, and for which of these is there independent support or an obvious experiment? We then check, for the top loci, what is already known. We make no claim that any locus is new. The aim is a short, honest list of variant-level hypotheses that a wet-lab group can test.
+
+\section{Methods}
+
+Figure 1 shows the pipeline. All scripts, derived tables and figures are in the accompanying repository (Section 8).
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig1_pipeline_workflow.pdf}
+\figcap{Figure 1.}{Pipeline. Computational predictions only; the last step (wet-lab validation) is outside this work.}
+\end{figure*}
+
+\subsection{Lead variants}
+
+Keloid associations were retrieved from the GWAS Catalog REST API v2 \cite{k21} (trait MONDO\_0005348; the associations we used come from \cite{k1,k2,k14,k15,k16,k17}). We kept the 39 distinct variants with an rsID and a reported p \textless{} 5 × 10⁻⁸. Two additional Catalog associations without an rsID (chr15:56140995 and chr15:68789191, both from \cite{k17}) were not carried forward. Every one of the 39 leads is therefore, by construction, a published genome-wide-significant keloid hit.
+
+\subsection{LD fine-mapping}
+
+For each lead we retrieved LD proxies with r² ≥ 0.8 from Ensembl REST \cite{k23} using 1000 Genomes phase 3 EUR and EAS panels (GRCh38), and annotated them with the Ensembl Variant Effect Predictor. Proxies were kept if they were biallelic single-nucleotide variants. This gave \textbf{349 candidate rows} (lead--proxy pairs, including the lead itself when eligible), corresponding to \textbf{278 unique SNVs}, for 37 of the 39 leads. \textbf{686 proxy rows were excluded}: 586 multiallelic, 94 indels or other non-SNVs, and 6 with no Ensembl/VEP record. Two leads (rs527569697, rs549023067) had no eligible candidate. This is LD-based candidate selection, not statistical fine-mapping: it does not use association summary statistics and cannot assign posterior probabilities. We did not use an African-ancestry panel.
+
+\subsection{AlphaGenome scoring}
+
+Each candidate was scored with the AlphaGenome 2 API \cite{k18} (cloud model, v2; free non-commercial access under the AlphaGenome terms) as reference versus alternative allele in six skin-related conditions: skin fibroblast (UBERON:0002097\_CL:0002620), dermal fibroblast, myofibroblast, skin keratinocyte (UBERON:0002097\_CL:0000312), macrophage and endothelial cell. Condition identifiers were chosen explicitly, not by first search match. For each variant--condition pair we recorded, as the maximum absolute effect over the window, seven predicted metrics: ATAC, DNase, CAGE, ChIP-histone, ChIP-TF, single-cell ATAC and RNA-seq (log fold change). \textbf{1,644 of 1,668 variant--condition pairs (274 of 278 variants × 6 conditions) were scored.} Four variants (rs4980389, rs569550, rs686722, rs76024540) could not be scored because the required sequence window was too short near patch contigs; all candidate rows of leads rs686722 (3 rows) and rs76024540 (1 row) are these variants, so those two leads are unranked.
+
+\subsection{Ranking}
+
+For each metric we took the maximum over the six conditions (RNA as \textbar log fold change\textbar), converted it to a percentile rank across all 274 scored variants, and averaged the seven ranks into \texttt{rank\_score} (0--1; higher = stronger predicted effect). The recipe was fixed before looking at results and was not tuned. The top variant per locus is the candidate with the highest \texttt{rank\_score} for that lead; 35 loci were ranked, 2 leads had no candidates, and 2 had candidates that could not be scored. A \textbf{skin-accessibility flag} marks variants whose ATAC, DNase or ChIP-histone effect in skin fibroblast or keratinocyte is at or above the 90th percentile of that metric over all variant--condition rows. This flag is a within-dataset percentile, not a calibrated probability.
+
+\subsection{Benchmark against prior evidence}
+
+There is no gold-standard causal-variant set for keloid. We therefore measured \emph{concordance} of the same scoring recipe (percentile ranks computed within the 50-variant set) with independent prior evidence on 50 variants (44 in the Catalog keloid set; 6 literature seed variants), using genome-wide significance, replication in at least two publications, exact-variant GTEx skin/fibroblast eQTL status and literature co-mention as labels, with Spearman correlation and area under the ROC curve (AUC) with bootstrap 95\% confidence intervals, and a family-wise permutation test across 23 scoring recipes. Older free predictors (phyloP, phastCons, ENCODE cCRE overlap) were run as comparators.
+
+\subsection{Single-cell expression}
+
+We summarised expression of mapped genes in GEO series GSE163973 \cite{k20}: scRNA-seq of dermis from 3 keloid and 3 normal-scar samples (21,488 and 19,167 cells; 40,655 cells in total), using the authors' published cell-type labels. For 30 genes (GWAS-mapped genes and marker controls) we computed per-cell-type mean log1p(CP10K) and the percentage of cells with detected expression, overall and by condition. These are descriptive cell-level summaries, not donor-level differential-expression tests.
+
+\subsection{Novelty check and tiers}
+
+For each of the 39 leads we examined the top candidate variant. The ten top-ranked loci received a \emph{deep} check: the GWAS Catalog (variant-level associations), GTEx \cite{k22} exact-variant eQTLs in sun-exposed and not-sun-exposed skin and cultured fibroblasts (v8 and v10), ClinVar, dbSNP, Ensembl LD, PubMed and Europe PMC open-access full-text search for the rsID and gene with keloid, scar and fibrosis, and Open Targets. The other 29 leads received a \emph{light} check (GWAS Catalog and GTEx only, no literature search), so their tiers are provisional. Date of check: 17 November 2026.
+
+The \textbf{variant-level tier rule} is:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Tier 1:} the variant itself is a genome-wide-significant keloid hit in the GWAS Catalog, or a published fine-mapping or functional paper names it.
+\item
+  \textbf{Tier 2:} the locus is a published keloid hit, but this specific variant (an LD proxy of the lead) and its predicted mechanism are not named in the sources we found.
+\item
+  \textbf{Tier 3:} variant and gene both unreported and with no skin eQTL.
+\end{itemize}
+
+The tier-2 wording means ``not named in the sources we found'', not ``proven novel''. Applying the originally specified rule \emph{literally}, that an LD proxy at r² ≥ 0.8 of a genome-wide-significant hit counts as already known, would make all 39 leads tier 1, because every candidate was selected at r² ≥ 0.8 with its lead; the rule is then circular and uninformative. We therefore report the strict variant-level tier as the main result and the literal-rule result in the supplementary table.
+
+\subsection{Exploratory structure work}
+
+For the three coding variants in the set (PHLDA3 p.Arg28Gln rs35383942, PHLDA3 p.Glu62Gly rs192314256, MYO7A p.Val679Ile rs35641839), we submitted wild-type and variant sequences to AlphaFold Server (AlphaFold 3 \cite{k19}), five models per job, and compared C-alpha RMSD and pLDDT with the wild-type-to-wild-type seed variation as noise floor. This part is exploratory and is not part of the ranking.
+
+\section{Results}
+
+\subsection{Fine-mapping and ranking}
+
+The 39 leads expanded to 349 candidate rows (278 unique SNVs), of which 290 were intronic and 30 intergenic; three were missense. After exclusions and scoring failures, 345 lead--variant rows (274 variants) were ranked. The per-locus top variant was a proxy rather than the lead itself in 24 of 35 loci, and the lead itself in 11. The 35 top-variant scores are concentrated at the high end (Figure 2b), as expected from taking a per-locus maximum. Of all 345 ranked rows, 88 were flagged skin-accessible, and 21 of the 35 per-locus top variants were.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig2_top10_loci.pdf}
+\figcap{Figure 2a.}{Top 10 loci, best candidate variant per locus (blue = skin-accessible chromatin flag, grey = not).}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig4_score_distribution_coverage.pdf}
+\figcap{Figure 2b.}{Distribution of per-locus top scores and locus coverage (35 ranked, 2 with no eligible candidates, 2 candidates not scored).}
+\end{figure*}
+
+\subsection{Top ten loci}
+
+Table 1 lists the ten top-ranked loci. \texttt{rank\_score} values are relative (a percentile-based average), \texttt{max\ \textbar{}effect\textbar{}} is the largest single-track predicted log fold change and is not comparable across assay types. Ties are possible: rs2049878 and rs35383942 have the same \texttt{rank\_score} to six decimals (0.915016).
+
+\begin{table*}[t]
+\centering
+\tabcap{Table 1.}{Top ten loci by \texttt{rank\_score}.}
+{\scriptsize\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{@{}rl>{\raggedright\arraybackslash}p{2.7cm}rr>{\raggedright\arraybackslash}Xcll@{}}
+\toprule
+\textbf{\#} & \textbf{Lead → variant} & \textbf{Gene (Catalog)} & \textbf{rank\_score} & \textbf{max |effect|} & \textbf{Skin chromatin flag} & \textbf{r² EUR / EAS} & \textbf{GTEx skin eQTL} & \textbf{Tier (literal)} \\
+\midrule
+1 & rs6726716 → rs7579101 & BABAM2 & 0.998 & 4.71 & yes: ATAC+\hspace{0pt}DNASE+\hspace{0pt}CHIP\_H & 0.90 / 0.99 & y (4.39e-5) & 2 (1) \\
+2 & rs6476838 → rs2068979 & GLIS3 & 0.992 & 1.50 & yes: CHIP\_H & 1.00 / 1.00 & n & 2 (1) \\
+3 & rs140716753 → rs140716753 & LINC02871; RPS11P1 & 0.985 & 1.69 & yes: ATAC+\hspace{0pt}DNASE+\hspace{0pt}CHIP\_H & 1.00 / 1.00 & n & 1 (1) \\
+4 & rs921721 → rs921721 & TRIB1AL & 0.971 & 1.16 & yes: ATAC+\hspace{0pt}DNASE+\hspace{0pt}CHIP\_H & 1.00 / 1.00 & n & 1 (1) \\
+5 & rs646315 → rs940189 & BPESC1; MRPS22 & 0.946 & 0.56 & yes: ATAC+\hspace{0pt}DNASE+\hspace{0pt}CHIP\_H & – / 0.90 & y (2.15e-6) & 2 (1) \\
+6 & rs1511412 → rs360710 & FOXL2NB; PRR23A & 0.940 & 0.78 & \textbf{no} & 0.83 / – & n & 2 (1) \\
+7 & rs13051336 → rs2026232 & LINC03138 & 0.937 & 1.06 & yes: ATAC+\hspace{0pt}DNASE+\hspace{0pt}CHIP\_H & 0.81 / – & n & 2 (1) \\
+8 & rs2832056 → rs2049878 & LINC03138 & 0.915 & 0.68 & yes: ATAC+\hspace{0pt}DNASE+\hspace{0pt}CHIP\_H & 0.83 / – & y (1.62e-10) & 2 (1) \\
+9 & rs35383942 → rs35383942 & PHLDA3 & 0.915 & 0.32 & yes: ATAC & 1.00 / 1.00 & y (3.76e-6) & 1 (1) \\
+10 & rs12568930 → rs12568930 & PPIAP34; ZBTB40 & 0.912 & 0.32 & yes: CHIP\_H & 1.00 / 1.00 & n & 1 (1) \\
+\bottomrule
+\end{tabularx}}
+\end{table*}
+
+Notes on the table. (i) rs940189 has no EUR r² to its lead rs646315 in the 1000 Genomes EUR panel (it was selected by EAS LD); it is r² = 0.994 (EUR) with rs940187, the 3q22.3 lead of the earlier Japanese GWAS \cite{k2}. (ii) \textbf{rs1511412 → rs360710 is not skin-accessible} in this model despite a high rank, so its regulatory prediction lacks skin chromatin support and should be down-weighted. (iii) Four of the ten are tier 1; the coding variant rs35383942 and rs12568930 have the weakest predicted single-track effects (max \textbar effect\textbar{} 0.32).
+
+\subsection{Concordance with prior evidence: the score is weakly informative}
+
+On the 50-variant benchmark the rank-average score showed weak, statistically unconvincing concordance with prior GWAS evidence: Spearman correlation with −log10 p was 0.12 (95\% CI −0.20 to 0.44, p = 0.42); AUC for variants replicated in at least two publications was 0.65 (0.39 to 0.89, p = 0.17), with 4 of its top 10 being replicated leads against 1.8 expected (hypergeometric p = 0.065). Across 23 recipe variants Spearman ranged from 0.01 to 0.21, with every interval including 0, and the replicated-label AUC ranged from 0.57 to 0.88 depending on recipe, so the headline depends on a choice the sample cannot make. The AUC for genome-wide significance (0.80, 0.53 to 1.00) is not evidence of success because only 3 of 44 Catalog variants were non-significant. The one recipe with a signal was the AlphaGenome Atlas variant-impact (AVI) score (AUC 0.88, 0.70 to 1.00 for replicated leads; family-wise permutation p ≈ 0.001), but it was tested after seeing the other recipes, is not independent of conservation (7 of its top 10 are shared with phyloP), and is not the score used for the ranking here. Free older predictors performed about as well on the same label (ENCODE cCRE overlap AUC 0.71, phastCons 0.77). \textbf{We therefore treat \texttt{rank\_score} as an uncalibrated prioritisation heuristic, not a validated predictor of causal variants.}
+
+\subsection{Expression of mapped genes by cell type}
+
+In GSE163973 (Figure 3), \emph{PHLDA3} was detected in 51.1\% of fibroblasts overall (62.8\% in keloid, 42.4\% in normal-scar fibroblasts) and in 50.4\% of cells labelled neural; \emph{BABAM2} in 29.9\% of fibroblasts (43.1\% keloid, 20.1\% normal scar); \emph{GLIS3} in 14.1\% of fibroblasts but 30.3\% of lymphatic endothelial and 42.1\% of neural cells; \emph{MRPS22} was highest in keratinocytes (44.9\%); \emph{BPESC1}, \emph{FOXL2NB} and \emph{PRR23A} were essentially undetected (≤ 0.1\%) in all cell types. \emph{FOXL2}, \emph{HEMK2}/\emph{N6AMT1}, \emph{JAG1} and \emph{TRIB1} were not among the 30 genes summarised, so no expression statement is made for them. Keloid-versus-scar differences are cell-level percentages from 3 versus 3 samples, without donor-level modelling, and are descriptive only. Cell-type labels are those of the dataset (for example ``muscle\_fiber'').
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig3_gene_expression_heatmap.pdf}
+\figcap{Figure 3.}{Mean log1p(CP10K) of GWAS-mapped genes by cell type, GSE163973 (all samples).}
+\end{figure}
+
+\subsection{Novelty tiers}
+
+Of the 39 leads, \textbf{15 were tier 1, 24 tier 2 and 0 tier 3}; under the literal LD rule all 39 would be tier 1 (Table S1). The ten deep-checked loci comprised 4 tier 1 (rs140716753, rs921721, rs35383942, rs12568930) and 6 tier 2 (rs7579101, rs2068979, rs940189, rs360710, rs2026232, rs2049878). The 29 light-pass tiers are provisional (11 tier 1, 18 tier 2). Four tier-1 leads (rs527569697, rs549023067, rs686722, rs76024540) were not scored by AlphaGenome.
+
+No locus is unreported: every lead is a published Catalog keloid hit, so tier 3 is empty by construction, and tier-2 status reflects that we found no source naming the variant, not that none exists. The deep-check evidence per variant is in \texttt{results/novelty/novelty\_top10\_notes.md}. Key points:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Already known (tier 1).} rs35383942 (\emph{PHLDA3}) and rs140716753 are already named as putatively causal in the multi-ancestry fine-mapping of Greene \emph{et al.} \cite{k1} (the latter in African-ancestry analysis, labelled \emph{JAG1} although it lies about 451 kb from the \emph{JAG1} transcription start site, which we regard as a mapping label rather than demonstrated regulation); rs76024540 is named there as well. rs921721 and rs12568930 are Catalog lead hits without fine-mapping or functional papers that we found.
+\item
+  \textbf{Tier-2 variants with a GTEx skin eQTL (Figure 4).} rs2049878 is an eQTL for \emph{N6AMT1} (\emph{HEMK2}) in sun-exposed skin (p = 1.6e-10) and cultured fibroblasts (p = 2.1e-9); its lead rs2832056 is also an eQTL for the same gene (sun-exposed p = 4.7e-10; fibroblasts p = 1.4e-11), so the two cannot be separated without further work. rs940189 is a \emph{FOXL2} eQTL (v10 sun-exposed p = 8.0e-6, not-sun-exposed p = 2.15e-6) and tags rs940187 \cite{k2,k4} at r² = 0.994 (EUR). rs7579101 is a \emph{BABAM2} eQTL only in v10 not-sun-exposed skin (p = 4.4e-5; not significant in v8 or sun-exposed skin), and has the largest predicted single-track effect of any locus top variant (max \textbar effect\textbar{} 4.7).
+\item
+  \textbf{Context without a link to the variants.} No keloid, scar or fibrosis paper on \emph{BABAM2}, \emph{HEMK2}/\emph{N6AMT1}, \emph{TRIB1}, \emph{BPESC1}/\emph{MRPS22} or \emph{LINC03138} was found in PubMed. \emph{GLIS3} has fibrosis literature outside skin (intestinal fibroblasts \cite{k7}); \emph{WNT4} (the nearest well-studied gene to rs12568930, TSS 232 kb away) has skin-fibrosis literature \cite{k11,k12}; no source links the variant to these genes. Open Targets lists \emph{HEMK2} and \emph{GLIS3} among keloid-associated targets (ranks 3 and 22 of the 25 returned; evidence type not examined).
+\item
+  \textbf{Gene labels disagree between sources.} rs921721 is \emph{TRIB1AL} (Ensembl) or \emph{LINC02964} (dbSNP); rs2049878 is \emph{LINC03138} in the Catalog/VEP mapping and \emph{N6AMT1} in dbSNP.
+\end{itemize}
+
+Across all 39 top variants, 9 have an exact-variant GTEx skin/fibroblast eQTL, 25 do not and 5 were not in GTEx; for the 29 light-pass leads this is an exact-variant check only.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig5_gtex_skin_eqtl.pdf}
+\figcap{Figure 4.}{Top variants per lead with an exact-variant GTEx skin/fibroblast eQTL (blue = tier 2, grey = tier 1). Includes provisional light-pass leads and variants not scored by AlphaGenome (rs686722).}
+\end{figure*}
+
+\subsection{Exploratory structure section (AlphaFold 3 via AlphaFold Server)}
+
+\emph{This section is exploratory and secondary.} It covers the three coding variants only; the keloid hits are overwhelmingly non-coding. For PHLDA3 R28Q (rs35383942) the mean C-alpha RMSD of variant versus wild-type models was 0.68 Å (range 0.44--0.83) against a wild-type-to-wild-type noise of 0.82 Å (0.51--1.21); the local (residues 23--33) values were 0.34 Å versus 0.42 Å. For E62G (rs192314256) they were 0.60 Å versus 0.82 Å, local 0.30 Å versus 0.88 Å. For MYO7A V679I (rs35641839; a 2,215-residue single chain without partners) the motor-domain refit RMSD was 0.36 Å versus a noise of 0.49 Å, and pLDDT near residue 679 was unchanged (90.8 versus 91.3). \textbf{In all three comparisons the variant differed from wild type by less than the seed-to-seed noise, so no structural change is detected.} This is expected, since AlphaFold 3 does not predict the stability or binding effect of point substitutions, and a null result does not show the variants are harmless. Each comparison uses five models from one run.
+
+Two context points matter more than the structures. \emph{PHLDA3} R28Q is common (allele frequency 5.4\% overall in gnomAD v4, SIFT deleterious but PolyPhen benign), so the Greene signal is more plausibly regulatory \cite{k1}; the T allele is a GTEx skin eQTL raising \emph{PHLDA3} expression (NES +0.28 sun-exposed, +0.26 not-sun-exposed), and the same study reports higher predicted \emph{PHLDA3} expression in not-sun-exposed skin associated with keloid risk (OR 2.39, p = 1.7e-14) \cite{k1}. In contrast, our AlphaGenome run predicted the opposite direction for the risk allele; we did not re-open the model output to check the sign and did not resolve this conflict. For E62G (East Asian-specific; allele frequency about 1.3\% in gnomAD East Asians), the Greene text reports OR 0.16 for the C allele \cite{k1}, whereas the Biobank Japan summary statistics \cite{k15} give beta +1.83 (OR about 6) for the same allele; the two values are exact reciprocals with the same p-value, most likely a labelling error in the text, which we could not confirm. MYO7A V679I is the weakest candidate: it is not in the GWAS Catalog keloid set, comes from a 122-case admixture study (p = 8.3e-6, not genome-wide significant) \cite{k24}, is classified Benign/Likely benign in ClinVar with 6\% allele frequency in African-ancestry gnomAD, and MYO7A RNA is essentially absent in cultured fibroblasts (0.04 TPM). PHLDA3 is a p53-regulated repressor of Akt \cite{k25}. A review notes rs35383942 as a credible hypertrophic-scar variant in FinnGen but not replicated in UK Biobank \cite{k13}.
+
+\section{Discussion}
+
+\textbf{What this adds.} Every lead analysed here is an established keloid GWAS hit; we do not claim discovery of loci. The contribution is a variant-level layer on top of those hits: for each locus, a ranked list of LD proxies by predicted skin regulatory effect, annotated for prior reports, with a transparent tier. The most useful output is a short list of tier-2 variants that carry an independent line of support (an exact-variant skin eQTL) and a concrete target gene: rs2049878 (\emph{N6AMT1}/\emph{HEMK2}), rs940189 (\emph{FOXL2}) and rs7579101 (\emph{BABAM2}). None of these genes has, to our knowledge, a keloid-specific literature, which makes them hypotheses rather than established mechanisms.
+
+\textbf{Convergence at 3q22.3.} \emph{FOXL2} was proposed as the gene for the rs1511412 block \cite{k2,k5}, and rs940189 in a separate block (r² about 0.42 with rs1511412 in EUR) is a \emph{FOXL2} skin eQTL. Whether the two blocks converge on \emph{FOXL2} regulation is untested.
+
+\textbf{Why the ranking is only a heuristic.} On the benchmark, the score is no better than simple free annotations (Section 3.3), the weights of the seven metrics are equal and untuned, the per-locus maximum favours loci with many candidates, and a single large predicted effect in any of six cell types raises the rank. Predictions are not calibrated probabilities. The tier-2 variants should therefore be read as ``worth testing'', not as ``predicted causal''. The rs35383942 locus, where a published fine-mapped variant has a modest AlphaGenome effect and an opposite predicted direction, is a reminder that the model can disagree with the best available evidence.
+
+\textbf{Relation to prior fine-mapping.} Greene \emph{et al.} \cite{k1} performed statistical fine-mapping with multi-ancestry data and named putatively causal SNPs, including rs140716753 and rs35383942 (and rs76024540). Our LD-based approach is weaker in design but complementary: it scores all LD proxies, not only those that survive a statistical fine-mapping threshold, in skin cell types. Where the two disagree, statistical fine-mapping should take precedence.
+
+\section{Limitations}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Predictions, not validation.} No experiment has confirmed any variant. The score is uncalibrated, weakly concordant with prior evidence, and was developed without independent held-out data.
+\item
+  \textbf{No new loci.} All 39 leads are published Catalog hits; tier-2 means ``not named in sources we found''. The literature search is limited (PubMed does not index rsIDs; Europe PMC full-text search covers open access only), and Greene \emph{et al.} supplementary tables were not read.
+\item
+  \textbf{Light-pass tiers are provisional.} Only 10 of 39 leads were literature-checked; the GTEx check was exact-variant only (no proxy or locus-wide eQTL scan, two skin tissues and cultured fibroblasts, significant eQTLs only). Absence of an eQTL is not evidence of no effect, and GTEx tissue is not keloid tissue.
+\item
+  \textbf{LD, not statistical fine-mapping.} 1000 Genomes EUR and EAS reference panels only; no African-ancestry panel, although two top African-ancestry variants (rs140716753, rs76024540) are poorly served by it.
+\item
+  \textbf{Exclusions.} 686 proxy rows (indels, multiallelic variants) were not scored and could contain causal variants. Four variants failed (patch contigs) and two leads had nothing to score; four tier-1 leads are therefore unranked.
+\item
+  \textbf{Model scope.} Six cell types, a 7-metric score and maximum over alleles and conditions; cell types are not keloid-specific. Variant-effect direction was not evaluated, and for rs35383942 our predicted direction conflicts with GTEx and TWAS evidence.
+\item
+  \textbf{Single-cell data.} One public dataset, 3 versus 3 samples, descriptive cell-level percentages; several genes of interest (\emph{FOXL2}, \emph{HEMK2}, \emph{JAG1}, \emph{TRIB1}) were not summarised.
+\item
+  \textbf{Structure section.} Exploratory, five models per job, no partners or ligands, and AlphaFold 3 cannot assess point-mutation stability or binding.
+\item
+  \textbf{Terms.} AlphaGenome and AlphaFold Server outputs are for non-commercial research and are not clinical tools; derived tables carry the Google output terms (Section 8).
+\end{itemize}
+
+\section{Proposed wet-lab validation}
+
+\textbf{These are hypotheses to test, not findings.} We suggest a staged design, strongest hypotheses first, in primary keloid and normal dermal fibroblasts (and keratinocytes for rs940189 if available), matched to donor ancestry where possible.
+
+\begin{table*}[t]
+\centering
+\tabcap{Table 2.}{Proposed first experiments, strongest hypotheses first.}
+{\footnotesize\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{@{}c>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Priority} & \textbf{Variant → gene (hypothesis)} & \textbf{Support so far} & \textbf{First experiments} \\
+\midrule
+1 & rs2049878 → \emph{N6AMT1}/\emph{HEMK2} & GTEx skin eQTL (sun-exposed p = 1.6e-10; fibroblasts p = 2.1e-9); predicted skin-accessible; lead rs2832056 shares the eQTL & Allelic expression imbalance in heterozygous donor fibroblasts; reporter assay (ref vs alt); CRISPRi of the element and read \emph{N6AMT1}; test rs2049878 against the lead and other proxies \\
+2 & rs940189 → \emph{FOXL2} & GTEx skin eQTL (not-sun p = 2.15e-6); r² = 0.994 with rs940187 (3q22.3 lead \cite{k2,k4}) & Reporter assay; base-editing or HDR of the SNP in fibroblasts and read \emph{FOXL2}; compare with the rs1511412 block \\
+3 & rs7579101 → \emph{BABAM2} & Weak v10-only skin eQTL (p = 4.4e-5); largest predicted effect (max |effect| 4.7); \emph{BABAM2} detected in 43\% of keloid fibroblasts & Reporter assay; CRISPRi; allelic expression; treat as lowest confidence of the three \\
+\bottomrule
+\end{tabularx}}
+\end{table*}
+
+\textbf{Assays.} (1) \emph{Reporter (luciferase or massively parallel) assays}: clone about 300--500 bp around each variant with reference and alternative alleles upstream of a minimal promoter and compare in keloid fibroblasts, normal fibroblasts and keratinocytes. (2) \emph{CRISPR editing or CRISPRi/dCas9-KRAB}: edit the SNP (base editing or homology-directed repair) in a fibroblast line or silence the element, then measure the candidate gene by RT-qPCR or RNA-seq and downstream phenotypes (collagen and αSMA expression, contraction, proliferation). (3) \emph{eQTL and allelic expression}: genotype donor fibroblasts, select heterozygotes and measure allele-specific transcript ratios, and in a larger cohort test genotype against expression.
+
+\textbf{Controls.} Include a locus with strong independent evidence as a positive control for the pipeline (for example the rs35383942 \emph{PHLDA3} eQTL), low-ranked proxies at the same locus as negative controls (most variants in a locus are expected to be passengers), and the lead SNP alongside the proxy to separate tagging from causality. A negative result would be informative: it would count against the AlphaGenome-based prioritisation as well as against the specific hypothesis.
+
+\section{Conclusions}
+
+LD fine-mapping of 39 published keloid lead variants and AlphaGenome 2 scoring in six skin cell types gives a ranked, tiered list of 349 candidate rows (278 SNVs) at known loci. After checking the GWAS Catalog, GTEx and the literature, 15 leads are already known at the variant level and 24 are known loci whose top proxy variant is not named in the sources we found; no locus is new. Three tier-2 variants, rs2049878, rs940189 and rs7579101, have skin eQTL support for \emph{N6AMT1}/\emph{HEMK2}, \emph{FOXL2} and \emph{BABAM2} respectively and are proposed as the first experiments. The scoring is weakly concordant with prior evidence and all outputs are predictions.
+
+\section{Data and code availability}
+
+Code (MIT), derived result tables, figures and this paper are in the repository accompanying this preprint (\texttt{github\_release/}; repository URL to be added at publication). Scores are in \texttt{results/alphagenome/}, fine-mapping inputs in \texttt{data/processed/}, novelty tables in \texttt{results/novelty/}, and scripts in \texttt{scripts/}. Raw GSE163973 data (about 3 GB) are not redistributed: \texttt{scripts/fetch\_raw\_data.py} downloads them from GEO. AlphaFold Server structure files are not included. Access to AlphaGenome requires an individual API key under Google's non-commercial terms. Keys are never stored in the repository.
+
+\textbf{Terms notice.} AlphaGenome-derived scores are Output/Derivatives under the AlphaGenome Services Additional Terms of Service (\url{https://deepmind.google.com/science/alphagenome/terms}) and Output Terms of Use (\url{https://deepmind.google.com/science/alphagenome/output-terms}), which allow non-commercial use and public sharing with conspicuous notice and restrict use of outputs to train variant-effect prediction models similar to AlphaGenome. AlphaFold-3-derived summary tables are subject to the AlphaFold Server Output Terms (\url{https://alphafoldserver.com/output-terms}), which also forbid use for docking or ligand/peptide-binding prediction and for training structure-prediction models. Those files are therefore \textbf{not} released under CC BY 4.0 (see \texttt{LICENSE-DATA} and \texttt{TERMS\_NOTICE.md}). Tool versions at the time of the run: AlphaGenome API client ≥ 2.0.0 (v2 model), Python 3.11, pandas, numpy, scipy, matplotlib (see \texttt{requirements.txt}).
+
+\section{Acknowledgements}
+
+Analysis and drafting were assisted by Claude (Anthropic), which is not an author. We thank the teams behind the GWAS Catalog, GTEx, Ensembl, the GEO dataset authors \cite{k20}, and Google DeepMind for AlphaGenome and AlphaFold Server. AlphaGenome and AlphaFold are not endorsed by, or affiliated with, this work.
+
+\begin{thebibliography}{99}
+\bibitem{k1} Greene CA, Hampton G, Jaworski J, Shuey MM, Khan A, Luo Y, \emph{et al.} Multi-ancestry meta-analysis of keloids uncovers novel susceptibility loci in diverse populations. \emph{Nat Commun} 2025. \href{https://doi.org/10.1038/s41467-025-62945-x}{doi:10.1038/s41467-025-62945-x}. PMID 40835838.
+\bibitem{k2} Nakashima M, Chung S, Takahashi A, Kamatani N, Kawaguchi T, Tsunoda T, \emph{et al.} A genome-wide association study identifies four susceptibility loci for keloid in the Japanese population. \emph{Nat Genet} 2010. \href{https://doi.org/10.1038/ng.645}{doi:10.1038/ng.645}. PMID 20711176.
+\bibitem{k3} Zhu F, Wu B, Li P, Wang J, Tang H, Liu Y, \emph{et al.} Association study confirmed susceptibility loci with keloid in the Chinese Han population. \emph{PLoS One} 2013. \href{https://doi.org/10.1371/journal.pone.0062377}{doi:10.1371/journal.pone.0062377}. PMID 23667473.
+\bibitem{k4} Lu MZ, Ang QQ, Zhang X, Zhang LF, Yao XH, Lv H, \emph{et al.} Genomic risk variants at 3q22.3 are associated with keloids in a Chinese Han population. \emph{Am J Transl Res} 2018. PMID 29511450.
+\bibitem{k5} Lu W, Zheng X, Liu S, Ding M, Xie J, Yao X, \emph{et al.} SNP rs1511412 in FOXL2 gene as a risk factor for keloid by meta analysis. \emph{Int J Clin Exp Med} 2015. PMID 25932232.
+\bibitem{k6} Deng CC, Zhang LX, Xu XY, Zhu DH, Cheng Q, Ma S, \emph{et al.} Risk single-nucleotide polymorphism-mediated enhancer-promoter interaction drives keloids through long noncoding RNA down expressed in keloids. \emph{Br J Dermatol} 2023. \href{https://doi.org/10.1093/bjd/ljac025}{doi:10.1093/bjd/ljac025}. PMID 36689521.
+\bibitem{k7} Pokatayev V, Jaiswal A, Shih AR, Segerstolpe Å, Li B, Creasey EA, \emph{et al.} Bidirectional CRISPR screens decode a GLIS3-dependent fibrotic cell circuit. \emph{Nature} 2026. \href{https://doi.org/10.1038/s41586-025-09907-x}{doi:10.1038/s41586-025-09907-x}. PMID 41501466.
+\bibitem{k8} Syed F, Bayat A. Notch signaling pathway in keloid disease: enhanced fibroblast activity in a Jagged-1 peptide-dependent manner in lesional vs.~extralesional fibroblasts. \emph{Wound Repair Regen} 2012. \href{https://doi.org/10.1111/j.1524-475X.2012.00823.x}{doi:10.1111/j.1524-475X.2012.00823.x}. PMID 22985040.
+\bibitem{k9} Yu Y, Dong Y, Deng B, Yang T. lncRNA MIAT accelerates keloid formation by miR-411-5p/JAG1 axis. \emph{Crit Rev Eukaryot Gene Expr} 2023. \href{https://doi.org/10.1615/CritRevEukaryotGeneExpr.2022044734}{doi:10.1615/CritRevEukaryotGeneExpr.2022044734}. PMID 36734859.
+\bibitem{k10} Yang L, Mo W, Cao W, Mi L, Wu X. Integrative transcriptomic and machine learning analysis identifies JAG1 and NR2F2 in keloid. \emph{Clin Cosmet Investig Dermatol} 2026. \href{https://doi.org/10.2147/CCID.S625100}{doi:10.2147/CCID.S625100}. PMID 42769688.
+\bibitem{k11} Liu J, Zhao B, Zhu H, Pan Q, Cai M, Bai X, \emph{et al.} Wnt4 negatively regulates the TGF-β1-induced human dermal fibroblast-to-myofibroblast transition via targeting Smad3 and ERK. \emph{Cell Tissue Res} 2020. \href{https://doi.org/10.1007/s00441-019-03110-x}{doi:10.1007/s00441-019-03110-x}. PMID 31776823.
+\bibitem{k12} O'Brien A, Stevenson A, Barrett L, Lawler NB, Hortin N, Deng Z, \emph{et al.} Reduced WNT4 expression in normal skin fibroblasts leads to `Dupuytren-like' changes in the transcriptome. \emph{Heliyon} 2024. \href{https://doi.org/10.1016/j.heliyon.2024.e38016}{doi:10.1016/j.heliyon.2024.e38016}. PMID 39381224.
+\bibitem{k13} Peña OA, Cañadas-Garre M, Collins I, Timpson NJ, Martin P. Harnessing population genetics and animal models to uncover the genetics of skin scarring. \emph{J Plast Reconstr Aesthet Surg} 2026. \href{https://doi.org/10.1016/j.bjps.2025.11.010}{doi:10.1016/j.bjps.2025.11.010}. PMID 41320625. (Cited for secondhand context on FinnGen hypertrophic-scar results; not otherwise used.)
+\bibitem{k14} Dand N, Ung CY, Saklatvala JR, Simpson MA, Barker JN, Shaw TJ, \emph{et al.} GWAS meta-analysis identifies susceptibility loci for keloids and hypertrophic scarring in Europeans. \emph{J Invest Dermatol} 2025. \href{https://doi.org/10.1016/j.jid.2024.12.011}{doi:10.1016/j.jid.2024.12.011}. PMID 39746571. (Catalog record only; full text not read.)
+\bibitem{k15} Sakaue S, Kanai M, Tanigawa Y, Karjalainen J, Kurki M, Koshiba S, \emph{et al.} A cross-population atlas of genetic associations for 220 human phenotypes. \emph{Nat Genet} 2021. \href{https://doi.org/10.1038/s41588-021-00931-x}{doi:10.1038/s41588-021-00931-x}. PMID 34594039. (Catalog record and harmonised summary statistics.)
+\bibitem{k16} Ishigaki K, Akiyama M, Kanai M, Takahashi A, Kawakami E, Sugishita H, \emph{et al.} Large-scale genome-wide association study in a Japanese population identifies novel susceptibility loci across different diseases. \emph{Nat Genet} 2020. \href{https://doi.org/10.1038/s41588-020-0640-3}{doi:10.1038/s41588-020-0640-3}. PMID 32514122. (Catalog record only.)
+\bibitem{k17} Verma A, Huffman JE, Rodriguez A, Conery M, Liu M, Ho YL, \emph{et al.} Diversity and scale: genetic architecture of 2068 traits in the VA Million Veteran Program. \emph{Science} 2024. \href{https://doi.org/10.1126/science.adj1182}{doi:10.1126/science.adj1182}. PMID 39024449. (Catalog record only.)
+\bibitem{k18} Avsec Ž, Latysheva N, Cheng J, Novati G, Taylor KR, Ward T, \emph{et al.} Advancing regulatory variant effect prediction with AlphaGenome. \emph{Nature} 2026. \href{https://doi.org/10.1038/s41586-025-10014-0}{doi:10.1038/s41586-025-10014-0}. PMID 41606153.
+\bibitem{k19} Abramson J, Adler J, Dunger J, Evans R, Green T, Pritzel A, \emph{et al.} Accurate structure prediction of biomolecular interactions with AlphaFold 3. \emph{Nature} 2024. \href{https://doi.org/10.1038/s41586-024-07487-w}{doi:10.1038/s41586-024-07487-w}. PMID 38718835.
+\bibitem{k20} Deng CC, Hu YF, Zhu DH, Cheng Q, Gu JJ, Feng QL, \emph{et al.} Single-cell RNA-seq reveals fibroblast heterogeneity and increased mesenchymal fibroblasts in human fibrotic skin diseases. \emph{Nat Commun} 2021. \href{https://doi.org/10.1038/s41467-021-24110-y}{doi:10.1038/s41467-021-24110-y}. PMID 34140509. (Describes dataset GSE163973.)
+\bibitem{k21} Sollis E, Mosaku A, Abid A, Buniello A, Cerezo M, Gil L, \emph{et al.} The NHGRI-EBI GWAS Catalog: knowledgebase and deposition resource. \emph{Nucleic Acids Res} 2023. \href{https://doi.org/10.1093/nar/gkac1010}{doi:10.1093/nar/gkac1010}. PMID 36350656.
+\bibitem{k22} GTEx Consortium. The GTEx Consortium atlas of genetic regulatory effects across human tissues. \emph{Science} 2020. \href{https://doi.org/10.1126/science.aaz1776}{doi:10.1126/science.aaz1776}. PMID 32913098. (Describes GTEx v8; v10 was also queried via the GTEx Portal.)
+\bibitem{k23} Dyer SC, Austine-Orimoloye O, Azov AG, Barba M, Barnes I, Barrera-Enriquez VP, \emph{et al.} Ensembl 2025. \emph{Nucleic Acids Res} 2025. \href{https://doi.org/10.1093/nar/gkae1071}{doi:10.1093/nar/gkae1071}. PMID 39656687.
+\bibitem{k24} Velez Edwards DR, Tsosie KS, Williams SM, Edwards TL, Russell SB. Admixture mapping identifies a locus at 15q21.2-22.3 associated with keloid formation in African Americans. \emph{Hum Genet} 2014. \href{https://doi.org/10.1007/s00439-014-1490-9}{doi:10.1007/s00439-014-1490-9}. PMID 25280642. (Abstract level only.)
+\bibitem{k25} Kawase T, Ohki R, Shibata T, Tsutsumi S, Kamimura N, Inazawa J, \emph{et al.} PH domain-only protein PHLDA3 is a p53-regulated repressor of Akt. \emph{Cell} 2009. \href{https://doi.org/10.1016/j.cell.2008.12.002}{doi:10.1016/j.cell.2008.12.002}. PMID 19203586.
+\end{thebibliography}
+
+\vspace{6pt}
+{\footnotesize Reference verification: entries 1--17 were verified against PubMed or Europe PMC records in the project's novelty check (see \texttt{results/novelty/references.bib} for the depth of reading per entry); entries 18--25 were verified in Europe PMC on 17 November 2026 (title, authors, journal, DOI, PMID). Reference 20 was additionally confirmed to cite GSE163973 in its full text.\par}
+
+\clearpage\onecolumn
+\section*{Supplementary Table S1. All 39 leads: top candidate variant, tier and evidence}
+Sorted by AlphaGenome \texttt{rank\_score} (blank = not scored). ``Tier'' is the variant-level tier; ``Literal'' is the tier under the literal r² ≥ 0.8 rule. ``Depth'': D = literature-checked, L = light pass (Catalog + GTEx only; provisional). ``GTEx skin eQTL'' is exact-variant, with the best p among sun-exposed skin, not-sun-exposed skin and cultured fibroblasts (v8/v10); ``n'' = none significant; ``nt'' = variant not in GTEx.
+\medskip
+{\footnotesize\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{@{}l>{\raggedright\arraybackslash}p{5.2cm}rcccl@{}}
+\toprule
+\textbf{Lead → variant} & \textbf{Gene} & \textbf{rank\_score} & \textbf{Tier} & \textbf{Literal} & \textbf{Depth} & \textbf{GTEx skin eQTL} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Lead → variant} & \textbf{Gene} & \textbf{rank\_score} & \textbf{Tier} & \textbf{Literal} & \textbf{Depth} & \textbf{GTEx skin eQTL} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+rs6726716 → rs7579101 & BABAM2 & 0.998 & 2 & 1 & D & y (4.39e-5) \\
+rs6476838 → rs2068979 & GLIS3 & 0.992 & 2 & 1 & D & n \\
+rs140716753 → rs140716753 & LINC02871; RPS11P1 & 0.985 & 1 & 1 & D & n \\
+rs921721 → rs921721 & TRIB1AL & 0.971 & 1 & 1 & D & n \\
+rs646315 → rs940189 & BPESC1; MRPS22 & 0.946 & 2 & 1 & D & y (2.15e-6) \\
+rs1511412 → rs360710 & FOXL2NB; PRR23A & 0.940 & 2 & 1 & D & n \\
+rs13051336 → rs2026232 & LINC03138 & 0.937 & 2 & 1 & D & n \\
+rs2832056 → rs2049878 & LINC03138 & 0.915 & 2 & 1 & D & y (1.62e-10) \\
+rs35383942 → rs35383942 & PHLDA3 & 0.915 & 1 & 1 & D & y (3.76e-6) \\
+rs12568930 → rs12568930 & PPIAP34; ZBTB40 & 0.912 & 1 & 1 & D & n \\
+rs2919386 → rs2919393 & NRG1 & 0.908 & 2 & 1 & L & n \\
+rs244755 → rs700593 & MEF2C & 0.896 & 2 & 1 & L & n \\
+rs74983791 → rs77011640 & GPC1; U3 & 0.896 & 2 & 1 & L & n \\
+rs6091310 → rs6096393 & NFATC2; RPSAP1 & 0.891 & 2 & 1 & L & y (2.57e-6) \\
+rs10863683 → rs6703147 & LINC01705; QRSL1P2 & 0.877 & 2 & 1 & L & n \\
+rs873549 → rs6703147 & LINC01705; QRSL1P2 & 0.877 & 2 & 1 & L & n \\
+rs11293015 → rs6703147 & LINC01705; QRSL1P2 & 0.877 & 2 & 1 & L & n \\
+rs2378519 → rs6703147 & LINC01705; QRSL1P2 & 0.877 & 2 & 1 & L & n \\
+rs4239705 → rs4239705 & LINC02871; RPS11P1 & 0.876 & 1 & 1 & L & n \\
+rs75826502 → rs75826502 & BPESC1; MRPS22 & 0.859 & 1 & 1 & L & nt \\
+rs2423510 → rs2423512 & LINC01752 & 0.847 & 2 & 1 & L & n \\
+rs11632096 → rs7162435 & NEDD4 & 0.841 & 2 & 1 & L & n \\
+rs8032158 → rs7162435 & NEDD4 & 0.841 & 2 & 1 & L & n \\
+rs16976600 → rs7162435 & NEDD4 & 0.841 & 2 & 1 & L & n \\
+rs34647667 → rs34647667 & CORO2B; ITGA11 & 0.785 & 1 & 1 & L & n \\
+rs6906384 → rs6570963 & TAB2 & 0.659 & 2 & 1 & L & y (7.97e-11) \\
+rs77685836 → rs11876015 & LINC01478; SETBP1-DT & 0.588 & 2 & 1 & L & y (1.83e-4) \\
+rs2242026 → rs2598116 & NME8; SFRP4 & 0.570 & 2 & 1 & L & n \\
+rs192314256 → rs192314256 & PHLDA3 & 0.564 & 1 & 1 & L & n \\
+rs12989123 → rs9677931 & GPC1; U3 & 0.490 & 2 & 1 & L & nt \\
+rs7297246 → rs11112709 & CASC18 & 0.443 & 2 & 1 & L & n \\
+rs536701773 → rs536701773 & CSF2RB & 0.328 & 1 & 1 & L & n \\
+rs1205312 → rs6059655 & ASIP & 0.294 & 2 & 1 & L & y (8.13e-25) \\
+rs140707031 → rs140707031 & LINC01705; QRSL1P2 & 0.270 & 1 & 1 & L & n \\
+rs769545468 → rs769545468 & RN7SKP183; RNU6-133P & 0.247 & 1 & 1 & L & nt \\
+rs527569697 → rs527569697 & TAFA2 &  & 1 & 1 & L & nt \\
+rs549023067 → rs549023067 & FRMD4A; FRMD4A-AS1 &  & 1 & 1 & L & nt \\
+rs686722 → rs686722 & LSP1 &  & 1 & 1 & L & y (1.45e-40) \\
+rs76024540 → rs76024540 & SLC67A1-AS &  & 1 & 1 & L & n \\
+\end{longtable}}
+\end{document}

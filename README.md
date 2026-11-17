@@ -136,7 +136,7 @@ venv\Scripts\python.exe scripts\gse163973_gene_by_celltype.py
 # 6. Figures, report, paper
 venv\Scripts\python.exe scripts\make_figures.py
 venv\Scripts\python.exe scripts\generate_report.py
-venv\Scripts\python.exe scripts\build_paper.py --pdf
+venv\Scripts\python.exe scripts\build_paper.py --pdf   # needs pandoc + tectonic on PATH (LaTeX, two-column preprint layout)
 ```
 
 **What has been tested** (2026-11-17, on a copy of this folder): `rank_finemap.py` regenerates `finemap_ranking_all.csv` and `finemap_top_per_locus.csv` byte-identically from the shipped scores and candidates; `fetch_raw_data.py --dry-run` lists the GSE163973 files (2.87 GB total); `make_figures.py` and `build_paper.py --pdf` run on the shipped data (the latter needs `pip install markdown` and Chrome or Edge). **Not re-run for this release:** `fetch_keloid_data.py`, `build_finemap_candidates.py` (live APIs), `run_alphagenome.py` (needs your key; the AlphaGenome v2 imports were patched and verified, runtime of some skill scripts is untested), `gse163973_gene_by_celltype.py` and `benchmark_vs_prior.py` (need the raw download / API access), `generate_report.py`. Script arguments and order may differ slightly; check each script's header. The optional AlphaFold 3 part is manual: `prepare_alphafold_jobs.py` writes inputs for AlphaFold Server; structure files are not redistributed.

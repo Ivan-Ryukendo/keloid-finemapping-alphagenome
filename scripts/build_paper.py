@@ -1,14 +1,14 @@
 """Build paper/keloid_finemapping_paper.md (fills tables from the CSVs) and the PDF.
-python scripts/build_paper.py [--pdf]   (needs: markdown; Chrome or Edge for --pdf)
+python scripts/build_paper.py [--pdf]   (needs: markdown; pandoc + tectonic for --pdf)
 Tables are generated from results/ so quoted numbers cannot drift from the data."""
-import argparse, base64, html, re, subprocess, sys, tempfile
+import argparse, base64, html, re, sys
 from pathlib import Path
 import markdown
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
 P = ROOT / "paper"
-ap = argparse.ArgumentParser(); ap.add_argument("--pdf", action="store_true"); ap.add_argument("--browser", default="")
+ap = argparse.ArgumentParser(); ap.add_argument("--pdf", action="store_true"); ap.add_argument("--pandoc", default=""); ap.add_argument("--tectonic", default="")
 args = ap.parse_args()
 
 nv = pd.read_csv(ROOT / "results/novelty/novelty_all_loci.csv")
@@ -56,11 +56,14 @@ blockquote{margin:8px 0;padding:4px 10px;border-left:3px solid #b7791f;backgroun
 
 (P / "keloid_finemapping_paper.html").write_text(build_html(), encoding="utf8")
 if args.pdf:
-    b = args.browser or next((c for c in ["C:/Program Files/Google/Chrome/Application/chrome.exe",
-        "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe", "C:/Program Files/Microsoft/Edge/Application/msedge.exe"] if Path(c).exists()), "")
-    assert b, "no Chrome/Edge found; pass --browser"
-    prof = Path(tempfile.mkdtemp(prefix="chrome_prof_", dir=str(ROOT.parent / "Keloid_Research_Workspace" / "cache") if (ROOT.parent / "Keloid_Research_Workspace" / "cache").exists() else None))
-    out = P / "keloid_finemapping_paper.pdf"
-    subprocess.run([b, "--headless=new", "--disable-gpu", f"--user-data-dir={prof}", "--no-pdf-header-footer",
-                    f"--print-to-pdf={out}", (P / "keloid_finemapping_paper.html").as_uri()], check=True, timeout=180)
+    import shutil
+    from make_latex import build
+    tools = ROOT.parent / "Keloid_Research_Workspace" / "tools"  # not committed; or put pandoc/tectonic on PATH
+    pandoc = args.pandoc or shutil.which("pandoc") or next(tools.glob("pandoc*/pandoc*/pandoc.exe"), None)
+    tectonic = args.tectonic or shutil.which("tectonic") or next(tools.glob("tectonic/tectonic.exe"), None)
+    assert pandoc and tectonic, "need pandoc and tectonic (PATH, --pandoc/--tectonic, or Keloid_Research_Workspace/tools)"
+    cache = tools.parent / "cache" / "tectonic" if tools in Path(tectonic).parents else ROOT / ".tectonic_cache"
+    cache.mkdir(parents=True, exist_ok=True)
+    pdf = build(md, P, pandoc, tectonic, cache)
+    out = P / "keloid_finemapping_paper.pdf"; shutil.copy(pdf, out)
     print("wrote", out, out.stat().st_size, "bytes")
