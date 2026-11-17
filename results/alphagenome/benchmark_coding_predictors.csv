@@ -1,0 +1,4 @@
+rs_id,sift_min,sift_call,polyphen_max,polyphen_call,alphamissense_max
+rs192314256,0.0,deleterious,0.678,possibly_damaging,0.9095
+rs35383942,0.01,deleterious,0.32,benign,0.1959
+rs35641839,0.0,deleterious_low_confidence,0.173,benign,0.0858

@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Keloid Computational Genomics Pipeline"
+type: software
+version: 0.1.0
+date-released: 2026-11-17
+license: MIT
+authors:
+  - family-names: "Abdel Nasser"
+    given-names: "Mirza Gamal"
+    email: "mirzagamalabdelnasser@gmail.com"
+abstract: "Research-only pipeline that fine-maps keloid GWAS loci, scores candidate variants with AlphaGenome 2 in skin cell types, and integrates single-cell expression to generate hypotheses for wet-lab validation. Predictions, not validation."
+keywords:
+  - keloid
+  - GWAS
+  - AlphaGenome
+  - fine-mapping
+  - regulatory variants
+
+preferred-citation:
+  type: article
+  title: "Variant-level prioritisation of keloid GWAS loci with LD fine-mapping and AlphaGenome 2: predicted skin regulatory effects and testable hypotheses"
+  authors:
+    - family-names: "Abdel Nasser"
+      given-names: "Mirza Gamal"
+  year: 2026
+  notes: "Preprint v0.1.0, not peer reviewed. Analysis assisted by Claude (Anthropic)."

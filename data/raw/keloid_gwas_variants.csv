@@ -1,0 +1,76 @@
+rs_id,effect_allele,p_value,beta_or_description,risk_frequency,location_grch38,mapped_genes,reported_trait,pubmed_id,first_author,study_accession,association_id,chrom,pos_grch38,cytoband,functional_class,most_severe_consequence,alleles,maf,in_gwas_catalog_keloid,seed_source,is_coding_like
+chr15:56140995,T,8e-13,0.238 unit decrease,0.7278,,,Keloid scar (PheCode 701.4),39024449,Verma A,GCST90476199,228279846.0,,,,,,,,True,,False
+chr15:68789191,G,2e-11,0.3425 unit increase,0.8533,,,Keloid scar (PheCode 701.4),39024449,Verma A,GCST90476200,228279967.0,,,,,,,,True,,False
+rs10863683,C,2e-43,0.3243 unit increase,0.341,1:222077747,LINC01705;QRSL1P2,Keloid scar (PheCode 701.4),39024449,Verma A,GCST90480466,228316187.0,1,222077747,1q41,intergenic_variant,intergenic_variant,C/G/T (forward),0.362637,True,,False
+rs10863683,C,7e-25,0.3513 unit increase,0.35,1:222077747,LINC01705;QRSL1P2,Keloid scar (PheCode 701.4),39024449,Verma A,GCST90476200,228279971.0,1,222077747,1q41,intergenic_variant,intergenic_variant,C/G/T (forward),0.362637,True,,False
+rs10863683,C,6.0000000000000004e-18,0.2967 unit increase,0.2688,1:222077747,LINC01705;QRSL1P2,Keloid scar (PheCode 701.4),39024449,Verma A,GCST90476199,228279850.0,1,222077747,1q41,intergenic_variant,intergenic_variant,C/G/T (forward),0.362637,True,,False
+rs10863683,C,6e-19,-,NR,1:222077747,LINC01705;QRSL1P2,Keloid,40835838,Greene CA,GCST90652489,192906281.0,1,222077747,1q41,intergenic_variant,intergenic_variant,C/G/T (forward),0.362637,True,,False
+rs10863683,C,1e-44,-,NR,1:222077747,LINC01705;QRSL1P2,Keloid,40835838,Greene CA,GCST90652488,192906260.0,1,222077747,1q41,intergenic_variant,intergenic_variant,C/G/T (forward),0.362637,True,,False
+rs10863683,C,2e-79,-,NR,1:222077747,LINC01705;QRSL1P2,Keloid,40835838,Greene CA,GCST90652487,192906086.0,1,222077747,1q41,intergenic_variant,intergenic_variant,C/G/T (forward),0.362637,True,,False
+rs10863683,G,3.0000000000000002e-25,-,NR,1:222077747,LINC01705;QRSL1P2,Excessive scarring,39746571,Dand N,GCST90483368,165004339.0,1,222077747,1q41,intergenic_variant,intergenic_variant,C/G/T (forward),0.362637,True,,False
+rs10863683,G,5e-19,-,NR,1:222077747,LINC01705;QRSL1P2,Keloid,32514122,Ishigaki K,GCST90013715,64720434.0,1,222077747,1q41,intergenic_variant,intergenic_variant,C/G/T (forward),0.362637,True,,False
+rs11130248,?,5e-07,-,0.52,3:50314769,HYAL1;HYAL2,Keloid,20711176,Nakashima M,GCST000773,16099.0,3,50314769,3p21.31,intergenic_variant,intergenic_variant,A/G/T (forward),0.217229,True,,False
+rs11293015,G,4e-26,0.4149 unit decrease,NR,1:222094101,LINC01705;QRSL1P2,Keloid,34594039,Sakaue S,GCST90018874,93483112.0,1,222094101,1q41,intron_variant,intron_variant,TTTTTTTT/TTTTTT/TTTTTTT/TTTTTTTTT (forward),0.312206,True,,False
+rs11293015,G,1e-24,0.51871675 unit decrease,0.713261016,1:222094101,LINC01705;QRSL1P2,Keloid,34594039,Sakaue S,GCST90018654,93463350.0,1,222094101,1q41,intron_variant,intron_variant,TTTTTTTT/TTTTTT/TTTTTTT/TTTTTTTTT (forward),0.312206,True,,False
+rs11632096,A,3.0000000000000003e-13,0.1683 unit decrease,0.6932,15:55918301,NEDD4,Keloid scar (PheCode 701.4),39024449,Verma A,GCST90480466,228316367.0,15,55918301,15q21.3,intron_variant,intron_variant,A/G (forward),0.324568,True,,False
+rs11632096,A,1e-27,-,NR,15:55918301,NEDD4,Keloid,40835838,Greene CA,GCST90652487,192906092.0,15,55918301,15q21.3,intron_variant,intron_variant,A/G (forward),0.324568,True,,False
+rs117166906,?,2e-07,-,NR,11:112440061,LINC02763,Keloid scar (PheCode 701.4),40465716,Liu TY,GCST90651951,191280794.0,11,112440061,11q23.1,intron_variant,intron_variant,A/G (forward),0.00431711,True,,False
+rs1205312,A,4e-10,-,NR,20:34261610,ASIP,Keloid,40835838,Greene CA,GCST90652487,192906097.0,20,34261610,20q11.22,intron_variant,intron_variant,A/C/G/T (forward),0.0111852,True,,False
+rs12568930,T,6.000000000000001e-09,-,NR,1:22375738,PPIAP34;ZBTB40,Keloid,40835838,Greene CA,GCST90652487,192906103.0,1,22375738,1p36.12,regulatory_region_variant,regulatory_region_variant,T/C (forward),0.231162,True,,False
+rs12989123,T,6e-10,-,NR,2:240312784,GPC1;U3,Keloid,40835838,Greene CA,GCST90652487,192906108.0,2,240312784,2q37.3,intergenic_variant,intergenic_variant,T/A/C/G (forward),0.247253,True,,False
+rs13051336,A,2e-14,-,NR,21:28443746,LINC03138,Keloid,40835838,Greene CA,GCST90652487,192906113.0,21,28443746,21q21.3,intron_variant,intron_variant,A/G/T (forward),0.413069,True,,False
+rs140707031,A,1e-08,-,NR,1:222118431,LINC01705;QRSL1P2,Keloid,40835838,Greene CA,GCST90652487,192906120.0,1,222118431,1q41,intron_variant,intron_variant,A/G (forward),0.00706436,True,,False
+rs140716753,C,4e-12,0.5325 unit decrease,0.976,20:11125355,LINC02871;RPS11P1,Keloid scar (PheCode 701.4),39024449,Verma A,GCST90480466,228316199.0,20,11125355,20p12.2,regulatory_region_variant,regulatory_region_variant,C/A (forward),0.0104003,True,,False
+rs140716753,A,2e-14,-,NR,20:11125355,LINC02871;RPS11P1,Keloid,40835838,Greene CA,GCST90652489,192906299.0,20,11125355,20p12.2,regulatory_region_variant,regulatory_region_variant,C/A (forward),0.0104003,True,,False
+rs140716753,A,2e-14,-,NR,20:11125355,LINC02871;RPS11P1,Keloid,40835838,Greene CA,GCST90652487,192906124.0,20,11125355,20p12.2,regulatory_region_variant,regulatory_region_variant,C/A (forward),0.0104003,True,,False
+rs1442440,,,,,,,,,,,,1,222066192,,,intergenic_variant,T/C,0.238815,False,Zhu 2013 (1q41),False
+rs1511412,A,2e-13,-,0.08,3:138994862,FOXL2NB;PRR23A,Keloid,20711176,Nakashima M,GCST000773,15748.0,3,138994862,3q22.3,intergenic_variant,intergenic_variant,A/C/G/T (forward),0.0600471,True,"Nakashima 2010 (3q22.3-23, FOXL2)",False
+rs16976600,T,4e-16,0.2984 unit increase,NR,15:55862437,NEDD4,Keloid,34594039,Sakaue S,GCST90018874,93483127.0,15,55862437,15q21.3,intron_variant,intron_variant,C/A/T (forward),0.314953,True,,False
+rs16976600,T,3e-14,0.35514858 unit increase,0.356423511,15:55862437,NEDD4,Keloid,34594039,Sakaue S,GCST90018654,93463360.0,15,55862437,15q21.3,intron_variant,intron_variant,C/A/T (forward),0.314953,True,,False
+rs16976600,T,1e-11,-,0.355915663,15:55862437,NEDD4,Keloid,32514122,Ishigaki K,GCST90013715,64720420.0,15,55862437,15q21.3,intron_variant,intron_variant,C/A/T (forward),0.314953,True,,False
+rs192314256,C,9e-19,1.8259 unit increase,NR,1:201468602,PHLDA3,Keloid,34594039,Sakaue S,GCST90018874,93483107.0,1,201468602,1q32.1,missense_variant,missense_variant,T/C (forward),,True,,True
+rs192314256,C,9e-19,1.8259165 unit increase,0.015182115,1:201468602,PHLDA3,Keloid,34594039,Sakaue S,GCST90018654,93463345.0,1,201468602,1q32.1,missense_variant,missense_variant,T/C (forward),,True,,True
+rs192314256,C,2.9999999999999997e-20,-,0.015208128,1:201468602,PHLDA3,Keloid,32514122,Ishigaki K,GCST90013715,64720408.0,1,201468602,1q32.1,missense_variant,missense_variant,T/C (forward),,True,,True
+rs2242026,T,8e-09,-,NR,7:37900684,NME8;SFRP4,Keloid,40835838,Greene CA,GCST90652487,192906131.0,7,37900684,7p14.1,intron_variant,intron_variant,C/T (forward),0.162088,True,,False
+rs2271289,,,,,,,,,,,,15,55924595,,,intron_variant,C/T,,False,Zhu 2013 (NEDD4),False
+rs2378519,A,7e-27,-,0.713371443,1:222100526,LINC01705;QRSL1P2,Keloid,32514122,Ishigaki K,GCST90013715,64720415.0,1,222100526,1q41,intron_variant,intron_variant,G/A (forward),0.314168,True,,False
+rs2423510,A,6.000000000000001e-09,-,NR,20:10689431,LINC01752,Keloid,40835838,Greene CA,GCST90652487,192906138.0,20,10689431,20p12.2,intron_variant,intron_variant,A/G/T (forward),0.418367,True,,False
+rs244755,T,2e-08,-,NR,5:88799968,MEF2C,Keloid,40835838,Greene CA,GCST90652487,192906143.0,5,88799968,5q14.3,intron_variant,intron_variant,C/G/T (forward),0.466444,True,,False
+rs2832056,T,1e-09,-,NR,21:28760185,LINC03138,Keloid,40835838,Greene CA,GCST90652487,192906150.0,21,28760185,21q21.3,intron_variant,intron_variant,T/C/G (forward),0.364011,True,,False
+rs28394564,,,,,,,,,,,,15,59307407,,,intron_variant,A/G,0.151688,False,African-American admixture study (MYO1E),False
+rs2919386,A,6e-10,-,NR,8:32698167,NRG1,Keloid,40835838,Greene CA,GCST90652487,192906155.0,8,32698167,8p12,intron_variant,intron_variant,A/C/G/T (forward),0.134812,True,,False
+rs34647667,T,1e-41,0.3754 unit increase,0.8128,15:68497527,CORO2B;ITGA11,Keloid scar (PheCode 701.4),39024449,Verma A,GCST90480466,228316375.0,15,68497527,15q23,intron_variant,intron_variant,T/G (forward),0.160126,True,,False
+rs34647667,T,2e-31,0.3983 unit increase,0.6566,15:68497527,CORO2B;ITGA11,Keloid scar (PheCode 701.4),39024449,Verma A,GCST90476199,228279854.0,15,68497527,15q23,intron_variant,intron_variant,T/G (forward),0.160126,True,,False
+rs34647667,T,2e-32,-,NR,15:68497527,CORO2B;ITGA11,Keloid,40835838,Greene CA,GCST90652489,192906293.0,15,68497527,15q23,intron_variant,intron_variant,T/G (forward),0.160126,True,,False
+rs34647667,T,6e-14,-,NR,15:68497527,CORO2B;ITGA11,Keloid,40835838,Greene CA,GCST90652488,192906266.0,15,68497527,15q23,intron_variant,intron_variant,T/G (forward),0.160126,True,,False
+rs34647667,T,2e-44,-,NR,15:68497527,CORO2B;ITGA11,Keloid,40835838,Greene CA,GCST90652487,192906161.0,15,68497527,15q23,intron_variant,intron_variant,T/G (forward),0.160126,True,,False
+rs35383942,T,2e-25,-,NR,1:201468704,PHLDA3,Keloid,40835838,Greene CA,GCST90652487,192906167.0,1,201468704,1q32.1,missense_variant,missense_variant,C/T (forward),,True,,True
+rs35383942,T,6.999999999999999e-11,-,NR,1:201468704,PHLDA3,Excessive scarring,39746571,Dand N,GCST90483368,165004333.0,1,201468704,1q32.1,missense_variant,missense_variant,C/T (forward),,True,,True
+rs35641839,,,,,,,,,,,,11,77174855,,,missense_variant,G/A,,False,African-American admixture study (MYO7A),True
+rs4239705,A,5.000000000000001e-15,-,NR,20:11261868,LINC02871;RPS11P1,Keloid,40835838,Greene CA,GCST90652487,192906174.0,20,11261868,20p12.2,intron_variant,intron_variant,A/G (forward),0.360086,True,,False
+rs527569697,A,9e-12,2.247 unit decrease,0.9995,12:61994675,TAFA2,Keloid scar (PheCode 701.4),39024449,Verma A,GCST90480466,228316371.0,12,61994675,12q14.1,intron_variant,intron_variant,A/G/T (forward),0.000196232,True,,False
+rs536701773,C,7e-12,2.316 unit decrease,0.9987,22:36931856,CSF2RB,Keloid scar (PheCode 701.4),39024449,Verma A,GCST90480466,228316363.0,22,36931856,22q12.3,intron_variant,intron_variant,C/T (forward),0.00176609,True,,False
+rs549023067,G,9e-12,2.54 unit decrease,0.9996,10:13748174,FRMD4A;FRMD4A-AS1,Keloid scar (PheCode 701.4),39024449,Verma A,GCST90480466,228316191.0,10,13748174,10p13,intron_variant,intron_variant,G/A/C (forward),0.000784929,True,,False
+rs60890210,A,7e-08,-,NR,15:55822580,NEDD4;PRTG,Excessive scarring,39746571,Dand N,GCST90483368,165004343.0,15,55822580,15q21.3,intergenic_variant,intergenic_variant,G/A (forward),0.303179,True,,False
+rs6091310,T,2e-11,-,NR,20:51367867,NFATC2;RPSAP1,Keloid,40835838,Greene CA,GCST90652487,192906181.0,20,51367867,20q13.2,intron_variant,intron_variant,G/T (forward),0.498038,True,,False
+rs646315,T,2e-09,0.3938 unit increase,NR,3:139123862,BPESC1;MRPS22,Keloid,34594039,Sakaue S,GCST90018874,93483122.0,3,139123862,3q23,intron_variant,intron_variant,G/A/C/T (forward),0.160322,True,,False
+rs646315,T,5e-10,0.5603341 unit increase,0.070711662,3:139123862,BPESC1;MRPS22,Keloid,34594039,Sakaue S,GCST90018654,93463355.0,3,139123862,3q23,intron_variant,intron_variant,G/A/C/T (forward),0.160322,True,,False
+rs646315,T,4e-12,-,0.071019004,3:139123862,BPESC1;MRPS22,Keloid,32514122,Ishigaki K,GCST90013715,64720427.0,3,139123862,3q23,intron_variant,intron_variant,G/A/C/T (forward),0.160322,True,,False
+rs6476838,T,1e-10,-,NR,9:4287190,GLIS3,Keloid,40835838,Greene CA,GCST90652487,192906188.0,9,4287190,9p24.2,intron_variant,intron_variant,C/T (forward),0.0924254,True,,False
+rs6726716,A,8e-09,-,NR,2:28158966,BABAM2,Keloid,40835838,Greene CA,GCST90652487,192906195.0,2,28158966,2p23.2,intron_variant,intron_variant,A/G (forward),0.270408,True,,False
+rs686722,T,1e-11,-,NR,11:1870492,LSP1,Keloid,40835838,Greene CA,GCST90652487,192906202.0,11,1870492,11p15.5,intron_variant,intron_variant,C/T (forward) C/T (forward),,True,,False
+rs6906384,A,6e-10,-,NR,6:149343404,TAB2,Keloid,40835838,Greene CA,GCST90652487,192906206.0,6,149343404,6q25.1,intron_variant,intron_variant,G/A/C (forward),,True,,False
+rs7297246,A,5e-09,-,NR,12:105725263,CASC18,Keloid,40835838,Greene CA,GCST90652487,192906210.0,12,105725263,12q23.3,intron_variant,intron_variant,A/G/T (forward),0.125,True,,False
+rs747722,,,,,,,,,,,,15,59307023,,,intron_variant,C/T,0.151688,False,African-American admixture study (MYO1E),False
+rs74983791,C,4e-08,0.2666 unit increase,NR,2:240345715,GPC1;U3,Keloid,34594039,Sakaue S,GCST90018874,93483117.0,2,240345715,2q37.3,intergenic_variant,intergenic_variant,T/C (forward),0.0930141,True,,False
+rs75826502,C,1e-09,-,NR,3:139118411,BPESC1;MRPS22,Keloid,40835838,Greene CA,GCST90652487,192906217.0,3,139118411,3q23,intron_variant,intron_variant,G/C (forward),0.00333595,True,,False
+rs76024540,C,9e-16,0.3743 unit decrease,0.9223,11:2898878,SLC67A1-AS,Keloid scar (PheCode 701.4),39024449,Verma A,GCST90480466,228316195.0,11,2898878,11p15.4,intron_variant,intron_variant,C/T (forward) C/T (forward),0.0302198,True,,False
+rs76024540,C,4e-15,0.3717 unit decrease,0.8913,11:2898878,SLC67A1-AS,Keloid scar (PheCode 701.4),39024449,Verma A,GCST90476199,228279858.0,11,2898878,11p15.4,intron_variant,intron_variant,C/T (forward) C/T (forward),0.0302198,True,,False
+rs76024540,T,3.0000000000000002e-18,-,NR,11:2898878,SLC67A1-AS,Keloid,40835838,Greene CA,GCST90652489,192906287.0,11,2898878,11p15.4,intron_variant,intron_variant,C/T (forward) C/T (forward),0.0302198,True,,False
+rs76024540,T,3.0000000000000002e-18,-,NR,11:2898878,SLC67A1-AS,Keloid,40835838,Greene CA,GCST90652487,192906223.0,11,2898878,11p15.4,intron_variant,intron_variant,C/T (forward) C/T (forward),0.0302198,True,,False
+rs769545468,A,4e-09,-,NR,X:20792046,RN7SKP183;RNU6-133P,Keloid,40835838,Greene CA,GCST90652487,192906242.0,X,20792046,Xp22.12,intergenic_variant,intergenic_variant,G/A (forward),,True,,False
+rs77685836,C,2e-09,-,NR,18:44661071,LINC01478;SETBP1-DT,Keloid,40835838,Greene CA,GCST90652487,192906230.0,18,44661071,18q12.3,non_coding_transcript_exon_variant,non_coding_transcript_exon_variant,C/A/G/T (forward),,True,,False
+rs8032158,C,6.000000000000001e-13,-,0.36,15:55902679,NEDD4,Keloid,20711176,Nakashima M,GCST000773,15749.0,15,55902679,15q21.3,intron_variant,intron_variant,T/A/C (forward),0.325746,True,"Nakashima 2010 (15q, NEDD4)",False
+rs873549,C,6e-23,-,0.28,1:222098425,LINC01705;QRSL1P2,Keloid,20711176,Nakashima M,GCST000773,15746.0,1,222098425,1q41,intron_variant,intron_variant,C/T (forward),0.314168,True,Nakashima 2010 / Zhu 2013 (1q41),False
+rs921721,A,2e-08,-,NR,8:125522294,TRIB1AL,Keloid,40835838,Greene CA,GCST90652487,192906237.0,8,125522294,8q24.13,intron_variant,intron_variant,A/T (forward),0.496468,True,,False
+rs940187,,,,,,,,,,,,3,139122751,,,intron_variant,T/A/C/G,0.272959,False,Nakashima 2010 (3q22.3-23),False

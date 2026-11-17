@@ -1,0 +1,24 @@
+# environment / secrets
+.env
+venv/
+cache/
+repos/
+__pycache__/
+*.pyc
+# large raw data (fetch with scripts/fetch_raw_data.py)
+data/raw/GSE163973/
+# AlphaFold Server outputs (terms of use: do not redistribute)
+results/alphafold/folds_*/
+results/alphafold/*.zip
+results/alphafold/*_wt_*/
+results/alphafold/*_rs*/
+*.cif
+# anything large
+*.Rdata.gz
+*.tar
+
+# run logs
+finemap_run.log
+*.log
+# build intermediates
+paper/keloid_finemapping_paper.html
